@@ -1,0 +1,20 @@
+<div data-test-editor-post-status ...attributes>
+    {{#if this.isSaving}}
+        Saving...
+    {{else if (or @post.isPublished @post.pastScheduledTime)}}
+        Published
+        {{#if (or (eq @post.email.status "submitting") (eq @post.email.status "submitting"))}}
+            and sending to {{gh-pluralize @post.email.emailCount "member"}}
+        {{else if (eq @post.email.status "submitted")}}
+            and sent to {{gh-pluralize @post.email.emailCount "member"}}
+        {{/if}}
+    {{else if @post.isScheduled}}
+        <time datetime="{{@post.publishedAtUTC}}" class="ml1 green f8" data-test-schedule-countdown>
+            Will be published {{this.scheduledText}}
+        </time>
+    {{else if @post.isNew}}
+        New
+    {{else}}
+        Draft
+    {{/if}}
+</div>

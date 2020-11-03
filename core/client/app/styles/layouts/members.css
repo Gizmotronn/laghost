@@ -1,0 +1,786 @@
+/* Global
+/* ----------------------------------------- */
+:root {
+    --member-import-table-outline: color-mod(var(--darkgrey) a(12%) s(+40%));
+    --member-import-table-border: color-mod(var(--darkgrey) a(7%) s(+40%));
+}
+
+/* Members avatar
+/* ----------------------------------------- */
+.gh-member-gravatar {
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+    box-shadow: 0 0 0 2px var(--white);
+}
+
+.gh-member-detail-avatar {
+    box-shadow: none;
+}
+
+.gh-member-avatar-label {
+    display: block;
+    color: #fff;
+}
+
+.gh-member-avatar-image {
+    display: block;
+    position: absolute;
+    display: block;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    opacity: 1.0;
+    max-width: unset;
+}
+
+.gh-member-initials {
+    border: none;
+}
+
+.gh-member-detail-avatar .gh-member-initials {
+    box-shadow: 0 0 0 1px var(--main-bg-color);
+}
+
+/* Members list
+/* ----------------------------------------- */
+
+.members-list {
+    table-layout: fixed;
+}
+
+.members-list .gh-list-row.header {
+    z-index: 1;
+}
+
+.members-list .gh-list-header {
+    position: sticky;
+    top: 84px;
+    z-index: 1;
+}
+
+.members-list-header-overlay {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: sticky;
+    height: 40px;
+    top: calc(84px - 40px); /* match gh-list-header sticky top */
+    left: 0;
+    right: 0;
+    margin-top: -40px;
+    transform: translateY(40px);
+    z-index: 2;
+
+    border-radius: 5px 5px 0 0;
+
+    border-bottom: 1px solid #e5eff5;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: .1px;
+    color: #738a94;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    white-space: nowrap;
+    background: #f8fafc;
+}
+
+.members-header .view-actions input.gh-members-list-searchfield {
+    min-width: 220px;
+    padding-left: 30px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.members-header .view-actions .gh-input-search-icon {
+    width: 14px;
+    height: 14px;
+    top: 10px;
+    left: 10px;
+}
+
+.dropdown-topmenu .gh-contentfilter-menu-trigger {
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+}
+
+.gh-members-list-searchfield.active {
+    border-color: #3eb0ef;
+    box-shadow: inset 0 0 0 1px #3eb0ef;
+}
+
+.gh-members-list-checkbox {
+    width: 36px;
+}
+
+p.gh-members-list-email {
+    margin: -2px 0 -1px;
+}
+
+.gh-members-list-subscribed-at {
+    margin-right: -8px;
+    padding-right: 0;
+}
+
+.gh-members-placeholder {
+    width: 118px;
+    margin: -30px 0 15px;
+}
+
+.gh-member-list-avatar {
+    font-size: 1.65rem;
+    font-weight: 500;
+    line-height: 0;
+    letter-spacing: -0.6px;
+}
+
+.gh-member-actions-menu {
+    top: calc(100% + 6px);
+    left: auto;
+    right: 10px;
+}
+
+.gh-member-actions-menu.fade-out {
+    animation-duration: .001s;
+    pointer-events: none;
+}
+
+.member-link-copied svg {
+    margin-right: 4px;
+}
+
+.members-header .gh-members-header-search {
+    margin-right: 12px;
+    border-right: 1px solid var(--lightgrey-d2);
+    padding-right: 12px;
+}
+
+.gh-members-chart-header {
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background: var(--whitegrey-l2);
+    border-bottom: var(--lightgrey) 1px solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.gh-members-chart-header .gh-contentfilter {
+    margin: 0 0 0 20px;
+    height: 16px;
+}
+
+.gh-members-chart-header .gh-contentfilter-type .gh-contentfilter-menu-trigger {
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.05);
+    height: 16px;
+    padding: 0 8px;
+}
+
+.gh-members-chart-dropdown {
+    margin-left: -103px;
+}
+
+.gh-members-chart-container {
+    height: 186px;
+    margin: 0;
+    padding: 4px 7px 11px 2px;
+}
+
+.gh-members-chart-summary {
+    flex-basis: 24%;
+    min-width: 244px;
+}
+
+.gh-members-chart-summary-data {
+    font-size: 3.6rem;
+    color: var(--darkgrey);
+    line-height: 4.0rem;
+}
+
+.members-header .gh-contentfilter {
+    margin-right: 0;
+}
+
+.members-header .gh-contentfilter-tag .gh-contentfilter-menu-trigger {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+
+@media (max-width: 1100px) {
+    .gh-members-chart-summary-data {
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+    }
+
+    .gh-members-chart-container {
+        height: 166px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .members-list .gh-list-header, .gh-list-hidecell-m {
+        display: table-cell;
+    }
+
+    .gh-members-chart-wrapper {
+        flex-direction: column;
+    }
+
+    .gh-members-chart-box {
+        margin: 0 0 24px;
+    }
+}
+
+@media (min-width: 440px) and (max-width: 1000px) {
+    .gh-members-chart-summary {
+        flex-direction: row;
+    }
+
+    .gh-members-chart-summary div {
+        flex-basis: 33%;
+        border-bottom: none;
+        justify-content: flex-start;
+    }
+
+    .gh-members-chart-summary > div:nth-of-type(1),
+    .gh-members-chart-summary > div:nth-of-type(2) {
+        border-right: 1px solid var(--whitegrey);
+    }
+}
+
+@media (max-width: 900px) {
+    .members-list .gh-list-header, .gh-list-hidecell-m {
+        display: none;
+    }
+
+    .gh-members-list-item {
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--lightgrey);
+        margin: 0;
+    }
+
+    .gh-members-list-item:nth-of-type(2) {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .gh-members-list-item .gh-list-data {
+        border-top: none !important;
+    }
+
+    .gh-members-list-item:hover {
+        background: var(--whitegrey-l2);
+    }
+
+    .gh-members-list-item:hover .gh-list-data {
+        background: none !important;
+    }
+
+    .gh-members-list-basic {
+        display: block;
+        flex: 1 1 100%;
+    }
+
+    .gh-members-list-subscribed-at {
+        display: inline-block;
+        width: auto;
+        padding: 0 0 16px 4px;
+        margin-top: -16px;
+        font-size: 1.2rem;
+    }
+
+    .gh-members-list-chevron {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .gh-list h3.gh-members-name-noname {
+        margin-top: -14px;
+    }
+
+    .gh-members-subscribed-noname {
+        display: inline-block;
+        margin-top: -32px;
+        padding-bottom: 16px;
+    }
+
+    .gh-members-list-geolocation {
+        display: inline-block;
+        padding: 0 0 0 64px;
+        margin-top: -16px;
+        width: auto;
+    }
+
+    .gh-members-list-geolocation::after {
+        content: "–";
+    }
+
+    .gh-members-geolocation-noname {
+        margin-top: -32px;
+        padding-bottom: 16px;
+    }
+}
+
+@media (max-width: 450px) {
+    .members-header {
+        justify-content: flex-end;
+        min-height: 120px;
+    }
+
+    .members-header .gh-canvas-title {
+        position: absolute;
+        top: 29px;
+        left: 21px;
+    }
+
+    .members-header .view-actions {
+        margin-top: 62px;
+        width: 100%;
+    }
+
+    .members-header .view-actions .gh-members-header-search {
+        width: 100%;
+    }
+
+    .view-actions input.gh-members-list-searchfield {
+        min-width: 0;
+    }
+}
+
+
+/* Member details
+/* ----------------------------------------- */
+
+label[for="member-description"] + p {
+    margin: 0 0 4px;
+}
+
+textarea.gh-member-details-textarea {
+    max-width: 100%;
+    min-width: auto;
+    min-height: 50px;
+    height: 98px;
+}
+
+.gh-member-info-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.gh-member-header-stripeinfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 24px;
+}
+
+.gh-member-header-stripeinfo h4 {
+    margin: 0 12px 0 0;
+    padding: 0;
+}
+
+.gh-member-stripe-info {
+    border-bottom: 1px solid var(--whitegrey);
+}
+
+.gh-member-stripe-info:last-of-type {
+    border-bottom: none;
+}
+
+.gh-member-stripe-table {
+    width: 100%;
+    margin: 6px 0 12px;
+}
+
+.gh-member-stripe-table td {
+    vertical-align: top;
+    font-size: 1.3rem;
+    padding: 5px 12px 5px 0;
+}
+
+.gh-member-stripe-label {
+    color: var(--midgrey-d1);
+    white-space: nowrap;
+    width: 200px;
+}
+
+.gh-members-subscribed-checkbox,
+.gh-members-comped-checkbox {
+    max-width: 100%;
+}
+
+.gh-new-member-avatar {
+    background: var(--midlightgrey-l1);
+}
+
+.gh-member-cancels-on-label {
+    display: inline-block;
+    background: var(--lightgrey-d1);
+    border-radius: 4px;
+    padding: 0px 5px;
+    margin: -2px 0 -2px -5px;
+    color: var(--darkgrey);
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.gh-member-stripe-status {
+    display: inline-block;
+    text-transform: capitalize;
+    margin-right: 6px;
+}
+
+.gh-member-btn-cancelsub span,
+.gh-member-btn-contsub span {
+    height: 25px;
+    line-height: 25px;
+}
+
+.gh-member-btn-contsub {
+    border-color: var(--blue);
+    box-shadow: none;
+}
+
+.gh-member-btn-contsub:hover {
+    border-color: color-mod(var(--blue) l(-7%) saturation(-10%));
+}
+
+.gh-member-btn-contsub span {
+    color: var(--blue);
+}
+
+.gh-member-btn-contsub:hover span {
+    color: color-mod(var(--blue) l(-7%) saturation(-10%));
+}
+
+.gh-member-settings-primary {
+    flex-basis: 740px;
+}
+
+.gh-member-settings-secondary {
+    flex-basis: 408px;
+}
+
+.gh-member-cancelstripe-checkbox {
+    margin-bottom: 4px;
+}
+
+.gh-member-cancelstripe-checkbox label {
+    display: flex;
+}
+
+.gh-member-cancelstripe-checkbox h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.15em;
+    margin-top: 2px;
+}
+
+.gh-member-cancelstripe-checkbox label p {
+    margin-top: -2px;
+    color: var(--middarkgrey);
+}
+
+.gh-member-cancelstripe-checkbox input:checked + .input-toggle-component {
+    border-color: color-mod(var(--red) l(-5%));
+    background: var(--red);
+}
+
+/* Import modal
+/* ---------------------------------------------------------- */
+
+.fullscreen-modal-import-members {
+    max-width: 640px;
+}
+
+.gh-members-import-uploader {
+    width: 100%;
+    min-height: 180px;
+}
+
+.gh-members-import-file {
+    min-height: 180px;
+}
+
+.gh-members-import-spinner {
+    position: relative;
+    display: flex;
+    min-height: 182px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gh-members-import-spinner .gh-loading-content {
+    padding-bottom: 0px;
+}
+
+.gh-members-import-spinner .description {
+    padding-top: 46px;
+}
+
+.gh-members-upload-errorcontainer {
+    border: 1px solid var(--whitegrey);
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 24px;
+    color: var(--middarkgrey);
+}
+
+.gh-members-upload-errorcontainer.warning {
+    border-left: 4px solid var(--yellow);
+}
+
+
+.gh-members-upload-errorcontainer.warning p a {
+    color: color-mod(var(--yellow) l(-12%));
+    text-decoration: underline;
+}
+
+.gh-members-upload-errorcontainer.error {
+    border-left: 4px solid var(--red);
+}
+
+.gh-members-upload-errorcontainer.error p a {
+    color: var(--red);
+    text-decoration: underline;
+}
+
+.gh-members-import-errormessage {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 12px 0 0;
+}
+
+p.gh-members-import-errorcontext {
+    font-size: 1.25rem;
+    line-height: 1.3em;
+    margin: 0;
+    font-weight: 400;
+}
+
+.gh-members-import-scrollarea {
+    position: relative;
+    max-height: calc(100vh - 350px - 12vw);
+    min-height: 175px;
+    overflow-y: scroll;
+    margin: 0 -32px;
+    padding: 0 32px;
+    background:
+        /* Shadow covers */
+        linear-gradient(var(--white) 30%, rgba(255,255,255,0)),
+        linear-gradient(rgba(255,255,255,0), var(--white) 70%) 0 100%,
+        
+        /* Shadows */
+        /* radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.12), rgba(0,0,0,0)) -64px 0,
+        radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.12), rgba(0,0,0,0)) -64px 100%; */
+        linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0)),
+        linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.08)) 0 100%;
+	background-repeat: no-repeat;
+	background-color: var(--white);
+	background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+	
+	/* Opera doesn't support this in the shorthand */
+    background-attachment: local, local, scroll, scroll;
+    margin-top: 4px;
+}
+
+.gh-members-import-errorheading {
+    font-size: 1.4rem;
+    line-height: 1.55em;
+    margin-top: 2px;
+}
+
+p.gh-members-import-errordetailtext {
+    font-size: 1.3rem;
+    line-height: 1.4em;
+    color: var(--midgrey);
+}
+
+.gh-members-import-errordetailtext:first-of-type {
+    border-top: 1px solid var(--lightgrey);
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+.gh-members-import-errordetailtext:not(:last-of-type) {
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+}
+
+.gh-members-import-table {
+    position: relative;
+    margin-bottom: 1px;
+}
+
+.gh-members-import-table::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: -33px;
+    bottom: 0;
+    height: 100%;
+    width: 32px;
+    background: var(--white);
+}
+
+.gh-members-import-table::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    right: -32px;
+    bottom: 0;
+    height: 100%;
+    width: 32px;
+    background: var(--white);
+}
+
+.gh-members-import-table th {
+    padding: 3px 8px;
+    background: color-mod(var(--darkgrey) a(5%) s(+50%));
+    border-left: 1px solid var(--member-import-table-border);
+    border-top: 1px solid var(--member-import-table-outline);
+    border-bottom: 1px solid var(--member-import-table-border);
+}
+
+.gh-members-import-table tr th:first-of-type {
+    border-left: 1px solid var(--member-import-table-outline);
+    width: 180px;
+}
+
+.gh-members-import-table tr th:last-of-type {
+    border-right: 1px solid var(--member-import-table-outline);
+}
+
+.gh-members-import-table td.empty-cell {
+    background: color-mod(var(--darkgrey) a(3%) s(+50%));
+}
+
+.gh-members-import-table td {
+    padding: 7px 8px 6px;
+    border-left: 1px solid var(--member-import-table-border);
+    border-bottom: 1px solid var(--member-import-table-border);
+    vertical-align: top;
+}
+
+.gh-members-import-table tr td:first-of-type {
+    border-left: 1px solid var(--member-import-table-outline);
+    width: 180px;
+}
+
+.gh-members-import-table tr td:last-of-type {
+    padding: 0;
+    border-right: 1px solid var(--member-import-table-outline);
+}
+
+.gh-members-import-table tr:last-of-type td {
+    border-bottom: 1px solid var(--member-import-table-outline);
+}
+
+.gh-members-import-datanav {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+p.gh-members-import-errordetail {
+    font-size: 1.2rem;
+    line-height: 1.4em;
+    margin: 10px 0 0 24px;
+}
+
+p.gh-members-import-errordetail:first-of-type {
+    border-top: 1px solid var(--whitegrey);
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+.gh-import-member-select {
+    height: auto;
+    border: none;
+    background: none;
+    border-radius: 0;
+}
+
+.gh-import-member-select select {
+    height: 34px;
+    border: none;
+    font-size: 1.3rem;
+    line-height: 1em;
+    padding: 4px 4px 4px 8px;
+    background: none;
+    color: var(--middarkgrey);
+    font-weight: 600;
+    border-radius: 0;
+}
+
+.gh-import-member-select select option {
+    font-weight: 400;
+    color: var(--darkgrey);
+}
+
+.gh-import-member-select select:focus {
+    background: none;
+    color: var(--middarkgrey);
+}
+
+.gh-import-member-select.unmapped select,
+.gh-import-member-select.unmapped select:focus {
+    color: var(--midlightgrey);
+    font-weight: 400;
+}
+
+.gh-import-member-select svg {
+    right: 9px;
+}
+
+.gh-members-import-table th.table-cell-field,
+.gh-members-import-table td.table-cell-field,
+.gh-members-import-table th.table-cell-data,
+.gh-members-import-table td.table-cell-data {
+    max-width: 180px;
+    overflow-wrap: break-word;
+}
+
+.gh-member-import-result-summary {
+    padding: 20px;
+}
+
+.gh-member-import-result-summary h2 {
+    font-size: 3.6rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-member-import-result-summary p {
+    margin: -2px 0 0;
+    padding: 0;
+    color: var(--midlightgrey);
+}
+
+.gh-member-import-nodata span {
+    display: flex;
+    min-height: 144px;
+    align-items: center;
+    justify-content: center;
+    color: var(--midgrey);
+}
+
+/* Fixing Firefox's select padding */
+@-moz-document url-prefix() {
+    .gh-import-member-select select {
+        padding: 4px;
+    }
+}

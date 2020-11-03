@@ -1,0 +1,61 @@
+/* Alerts
+/* ---------------------------------------------------------- */
+
+.gh-box {
+    position: relative;
+    padding: 12px 10px 14px 40px;
+    border: 1px solid transparent;
+    border-left-width: 5px;
+    color: var(--midgrey);
+    line-height: 1.55em;
+    letter-spacing: 0.2px;
+    background: #fff;
+    border-radius: 5px;
+    border-color: var(--whitegrey);
+    box-shadow: 0 6px 10px -8px rgba(0,0,0,.15)
+}
+
+.gh-box a {
+    color: var(--middarkgrey);
+    text-decoration: underline;
+}
+
+.gh-box svg:first-of-type {
+    position: absolute;
+    left: 12px;
+    width: auto;
+}
+
+.gh-box-tip {
+    border-left-color: var(--blue);
+}
+
+.gh-box-tip svg:first-of-type {
+    top: 12px;
+    height: 2rem;
+    fill: var(--blue);
+}
+
+.gh-box-alert {
+    border-left-color: color-mod(var(--yellow) l(-8%) s(+10%));
+}
+
+.gh-box-alert svg:first-of-type {
+    top: 14px;
+    height: 1.8rem;
+    fill: color-mod(var(--yellow) l(-8%) s(+10%));
+}
+
+.gh-box-error {
+    border-left-color: var(--red);
+}
+
+.gh-box-error svg:first-of-type {
+    top: 14px;
+    height: 1.8rem;
+    fill: var(--red);
+}
+
+.gh-box-error-border {
+    border-left: 5px solid var(--red);
+}
