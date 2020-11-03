@@ -1,0 +1,2 @@
+# laghost
+Personal Ghost Website
